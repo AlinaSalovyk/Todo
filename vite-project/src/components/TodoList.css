@@ -1,0 +1,16 @@
+.add-todo-section {
+    margin-bottom: 30px;
+}
+
+.add-todo-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
