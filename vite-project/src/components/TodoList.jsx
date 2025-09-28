@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import TodoItem from "./TodoItem.jsx"
-import AddTodoForm from "../../../../../папка Ліна/test/vite-project/src/components/AddTodoForm.jsx"
+import AddTodoForm from "../components/AddTodoForm.jsx"
 import "./TodoList.css"
 
 function TodoList() {
