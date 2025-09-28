@@ -1,0 +1,17 @@
+.todo-app {
+    background-color: #f5f5f5;
+    width: 600px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+.todo-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: rgba(3, 4, 5, 0.93);
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}

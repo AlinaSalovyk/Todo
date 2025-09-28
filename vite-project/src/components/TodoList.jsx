@@ -1,8 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import TodoItem from "./TodoItem"
-import AddTodoForm from "./AddTodoForm"
+import TodoItem from "./TodoItem.jsx"
+import AddTodoForm from "../../../../../папка Ліна/test/vite-project/src/components/AddTodoForm.jsx"
 import "./TodoList.css"
 
 function TodoList() {

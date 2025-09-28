@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import "./TodoItem.css"
+import "../../../../../папка Ліна/test/vite-project/src/components/TodoItem.css"
 
 function TodoItem({ todo, onDelete }) {
     const [isCompleted, setIsCompleted] = useState(false)
