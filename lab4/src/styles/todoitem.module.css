@@ -1,0 +1,58 @@
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(230, 230, 230, 0.7);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    transition: all 0.25s ease;
+}
+
+.item:hover {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.text {
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+.completed .text {
+    text-decoration: line-through;
+    color: #94a3b8;
+    opacity: 0.8;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+}
+
+.delBtn {
+    background: linear-gradient(135deg, #ff6b6b, #ff3d3d);
+    border: none;
+    color: white;
+    padding: 7px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.delBtn:hover {
+    box-shadow: 0 4px 14px rgba(255, 61, 61, 0.4);
+    transform: translateY(-2px);
+}
