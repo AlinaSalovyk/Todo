@@ -60,7 +60,7 @@
 }
 
 .error {
-    color: #b00020;
+    color: rgba(17, 46, 238, 0.93);
     font-weight: 500;
     padding: 10px 14px;
     background: rgba(255, 230, 230, 0.8);
@@ -84,4 +84,62 @@
     font-style: italic;
     border-radius: 12px;
     background: rgba(245, 245, 245, 0.6);
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(230, 230, 230, 0.7);
+    font-size: 0.95rem;
+    color: #444;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(10px);
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+    padding: 12px 16px;
+}
+
+.paginationButtons {
+    display: flex;
+    gap: 10px;
+}
+
+.pageBtn {
+    padding: 10px 18px;
+    border-radius: 30px; /* pill shape */
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    color: white;
+    background: linear-gradient(135deg, #0b74ff, #6c63ff, rgba(78, 2, 36, 0.93));
+    background-size: 200% 200%;
+    transition: all 0.3s ease;
+    min-width: 110px;
+}
+
+.pageBtn:hover:not(:disabled) {
+    background-position: 100% 0%;
+    box-shadow: 0 6px 18px rgba(11, 116, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+.pageBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.pageInfo {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.pageInfo strong {
+    color: #0b74ff;
 }
