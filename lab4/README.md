@@ -21,10 +21,11 @@ npm run build
 npm run preview
 
 ---
+
 ## 📂 Структура проєкту
 
 ```
-lab5-6/
+lab4/
 ├── api/
 │   └── todos.js             # API-функції (fetch, delete, toggle, edit)
 ├── components/
@@ -42,8 +43,8 @@ lab5-6/
 ├── main.jsx                 # Точка входу (ReactDOM.createRoot)
 └── README.md                # Опис проєкту, діаграми та патерни
 
----
 
+---
 ## 🌳 Component Tree
 
 ```mermaid
@@ -53,7 +54,6 @@ graph TD
     B --> D[TodoList]
     D --> E[TodoItem × N]
     D --> F[useTodos — Custom Hook]
-
 
 ```
 ---
@@ -88,20 +88,21 @@ graph TD
 ## 🔄 Data Flow Diagram
 
 ```mermaid
-flowchart TB
-    DummyJSON[DummyJSON API]
-    TodosAPI[api/todos.js]
+flowchart LR
+    DummyJSON["DummyJSON API"]
+    TodosAPI["api/todos.js"]
+    Hook["useTodos Hook<br/>todos, isLoading, error,<br/>searchTerm, currentPage,<br/>addTodo, deleteTodo,<br/>toggleTodo, editTodoTitle"]
+    List["TodoList Component<br/>форма додавання, пошук,<br/>пагінація, список задач"]
+    Item["TodoItem Component<br/>одна задача: toggle / edit / delete"]
+    Events["onToggle / onEdit / onDelete"]
 
-    useTodos[useTodos Hook<br/>todos, isLoading, error,<br/>searchTerm, currentPage,<br/>addTodo, deleteTodo,<br/>toggleTodo, editTodoTitle]
+    DummyJSON <-->|"HTTP: GET, PUT, DELETE"| TodosAPI
+    TodosAPI --> Hook
+    Hook --> List
+    List --> Item
+    Item --> Events
+    Events --> Hook
 
-    TodoList[TodoList Component]
-    TodoItem[TodoItem Component]
-
-    DummyJSON <-->|HTTP: GET, PUT, DELETE| TodosAPI
-    TodosAPI --> useTodos
-    useTodos --> TodoList
-    TodoList --> TodoItem
-    TodoItem -->|onToggle / onEdit / onDelete| useTodos
 
 ```
 
