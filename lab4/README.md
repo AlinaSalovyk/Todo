@@ -23,7 +23,7 @@ npm run preview
 ---
 ## 📂 Структура проєкту
 
-```plaintext
+```p
 lab5-6/
 ├── api/
 │   └── todos.js             # API-функції (fetch, delete, toggle, edit)
