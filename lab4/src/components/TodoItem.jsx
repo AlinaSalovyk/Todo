@@ -1,7 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styles from "../styles/todoitem.module.css";
 
-export default function TodoItem({ todo, onToggle, onDelete, onEdit }) {
+const TodoItem = React.memo(function TodoItem({ todo, onToggle, onDelete, onEdit }) {
     const [isEditing, setIsEditing] = useState(false);
     const [draft, setDraft] = useState(todo.todo);
 
@@ -65,4 +65,6 @@ export default function TodoItem({ todo, onToggle, onDelete, onEdit }) {
             </div>
         </li>
     );
-}
+});
+
+export default TodoItem;

@@ -9,7 +9,7 @@ import {
 } from "../api/todos";
 
 export default function useTodos(initialLimit = 10) {
-    // базові стани
+    // базо ві стани
     const [allTodos, setAllTodos] = useState([]); // поточний набір (сторінка) з API
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -27,7 +27,7 @@ export default function useTodos(initialLimit = 10) {
         [currentPage, limitPerPage]
     );
 
-    // FETCH (з урахуванням пагінації)
+    // FETCH (щ пагінації)
     const fetchTodos = useCallback(async () => {
         setIsLoading(true);
         setError(null);

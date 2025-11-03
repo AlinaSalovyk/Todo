@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import useTodos from "../hooks/useTodos";
 import TodoItem from "./TodoItem";
 import styles from "../styles/todolist.module.css";
@@ -10,17 +10,12 @@ export default function TodoList() {
         todos,
         isLoading,
         error,
-
         addTodo,
         deleteTodo,
         toggleTodo,
         editTodoTitle,
-
-        // search
         searchTerm,
         setSearchTerm,
-
-        // pagination
         currentPage,
         limitPerPage,
         totalTodos,
@@ -28,13 +23,15 @@ export default function TodoList() {
         goToNextPage,
         goToPrevPage,
         setLimit,
-    } = useTodos(10); // стартовий ліміт
+    } = useTodos(10);
 
-    const handleAdd = () => {
+    const handleAdd = useCallback(() => {
         if (!newTask.trim()) return;
         addTodo(newTask);
         setNewTask("");
-    };
+    }, [newTask, addTodo]);
+
+    const visibleTodos = useMemo(() => todos, [todos]);
 
     return (
         <div className={styles.container}>
@@ -79,10 +76,10 @@ export default function TodoList() {
 
             {/* List */}
             <ul className={styles.list}>
-                {todos.length === 0 && !isLoading && (
+                {visibleTodos.length === 0 && !isLoading && (
                     <li className={styles.empty}>Нічого не знайдено</li>
                 )}
-                {todos.map((todo) => (
+                {visibleTodos.map((todo) => (
                     <TodoItem
                         key={todo.id}
                         todo={todo}
